@@ -1,15 +1,15 @@
 require('./connect/config/db');
 var express=require('express');
-var bodyparser=require('body-parser');
+//var bodyparser=require('body-parser');
 var api=require('./connect/routes/userRoutes');
 var cors=require('cors');
 
 var app=express();
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({extended:true}));
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 app.use(cors());
 app.use('/',api);
-app.use(express.static(__dirname+'/dist/webapp/index.js'));
+app.use(express.static(__dirname+'/dist/webapp/index.html'));
 
 app.use((req,res,next)=>{
   res.setHeader('Access-Control-Allow-Origin' ,'*'),
