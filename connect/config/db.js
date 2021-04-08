@@ -1,5 +1,5 @@
 const  mongoose=require('mongoose');
-mongoose.connect('mongodb://localhost:27017/mydb',{useUnifiedTopology:true},{urlNewParser:true}).then(()=>{
+mongoose.connect('mongodb+srv://mydb:mydb123@cluster0.qvm9a.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{urlNewParser:true}).then(()=>{
 console.log('database connected');
 }).catch((err)=>{
     console.log("error in connecting database"+err);
