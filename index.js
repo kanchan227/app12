@@ -18,14 +18,7 @@ app.use((req,res,next)=>{
   res.setHeader('Access-Control-Allow-Headers', 'Origin,Content-Type,Accept')
 })
 
-const port=process.env.PORT || 3000;
-
-app.listen(port,(err)=>{
-    if(err)
-    console.log('Error in running'+err);
-
-    else
-    console.log('Server is running at '+port)
-})
-
-
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`App is running on port ${ PORT }`);
+});
